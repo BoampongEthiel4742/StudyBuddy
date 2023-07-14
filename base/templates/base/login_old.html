@@ -1,0 +1,13 @@
+<form action="" method="POST">
+  {% csrf_token %}
+  <label for="">Email:</label>
+  <input type="text" name="email" placeholder="Enter your email..." />
+
+  <label for="">Password:</label>
+  <input type="password" name="password" placeholder="Enter your password" />
+
+  <input type="submit" value="login" />
+
+  <p>Haven't Signed up yet?</p>
+  <a href="{% url 'register' %}">Register</a>
+</form>

@@ -1,0 +1,9 @@
+{% for room in rooms %}
+<div>
+  <a href="{% url 'room' room.id %}">{{room}}</a>
+  <small>created_by</small>
+  <p>{{room.host}}@{{ room.created|timesince}}</p>
+  <small>{{room.topic}}</small>
+</div>
+<hr />
+{% endfor %}

@@ -1,0 +1,28 @@
+{% extends 'main.html' %} {% block content %}
+
+<style>
+  .home_container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+</style>
+
+<div class="home_container">
+  <div>
+    <form action="" method="GET">
+      <input type="text" name="q" placeholder="Search for rooms..." />
+    </form>
+    {% include 'base/topic_component.html' %}
+  </div>
+
+  <div>
+    <h5><a href="{% url 'create-room' %}">Create Room</a></h5>
+    <h3>ROOMS</h3>
+    <p>{{room_count}} rooms available</p>
+    <hr />
+    {% include 'base/room_component.html' %}
+  </div>
+
+  <div>{% include 'base/activity_component.html' %}</div>
+</div>
+{% endblock %}
